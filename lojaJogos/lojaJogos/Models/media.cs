@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace lojaJogos.Models {
     public class Media {
@@ -9,6 +10,8 @@ namespace lojaJogos.Models {
         public string Fotografia { get; set; }
 
         public string Video { get; set; }
+
+        public virtual ICollection<Jogos> ListaDeJogos { get; set; }
 
     }
 }

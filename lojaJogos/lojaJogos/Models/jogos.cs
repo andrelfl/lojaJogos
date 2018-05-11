@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lojaJogos.Models {
@@ -11,8 +12,18 @@ namespace lojaJogos.Models {
 
         public decimal Preco { get; set; }
 
-        [ForeignKey("categoria")]
-        public int CategoriaFK { get; set; }
-        public virtual Categoria Categoria { get; set; }
+        public string Descricao { get; set; }
+
+        public string Chave { get; set; }
+
+        public virtual ICollection<Categoria> ListaDeCategorias { get; set; }
+
+        [ForeignKey("Cliente")]
+        public int ClienteFK { get; set; }
+        public virtual Cliente Cliente { get; set; }
+
+        [ForeignKey("Media")]
+        public int MediaFK { get; set; }
+        public virtual Media Media { get; set; }
     }
 }

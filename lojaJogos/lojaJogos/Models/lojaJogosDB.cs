@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 namespace lojaJogos.Models {
     public class LojaJogosDB : DbContext {
 
-        public LojaJogosDB() : base("MultasDbConnectionString")
+        public LojaJogosDB() : base("lojaJogosDBConnectionString")
         { }
 
         // identificar as tabelas da base de dados
@@ -12,7 +12,6 @@ namespace lojaJogos.Models {
         public virtual DbSet<Jogos> Jogos { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
-        public object Database { get; private set; }
 
         /// <summary>
         /// configura a forma como as tabelas são criadas
